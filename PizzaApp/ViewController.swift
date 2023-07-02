@@ -10,10 +10,10 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     let listOfPizzas: [PizzaDetails] = [
-        PizzaDetails(name: "macarella", description: "very tasty overall good choice for the first try", price: 500),
-        PizzaDetails(name: "anapizza", description: "awful overall shit choice for the first try", price: 300),
-        PizzaDetails(name: "dodo", description: "default tasty overall good choice for the first try", price: 450),
-        PizzaDetails(name: "kfc", description: "piece of shit don't eat it", price: 60000000000000)]
+        PizzaDetails(name: "macarella", description: "very tasty overall good choice for the first try", price: 500, image: UIImage(systemName: "cloud")!),
+        PizzaDetails(name: "anapizza", description: "awful overall shit choice for the first try", price: 300, image: UIImage(systemName: "cloud")!),
+        PizzaDetails(name: "dodo", description: "default tasty overall good choice for the first try", price: 450, image: UIImage(systemName: "cloud")!),
+        PizzaDetails(name: "kfc", description: "piece of shit don't eat it", price: 60000000000000, image: UIImage(systemName: "cloud")!)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +42,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         cell.orderButton.layer.cornerRadius = 15.0 // height / 2
         
         cell.orderButton.layer.masksToBounds = true
+        
+        cell.pizzaImage.image = listOfPizzas[indexPath.row].image
         return cell
     }
     
