@@ -20,39 +20,35 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         tableView.dataSource = self
         tableView.delegate = self
+        
+        navigationItem.title = "Pizza shop"
     }
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
+extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listOfPizzas.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MyTableViewCell
-        cell.titleLabel.text = listOfPizzas[indexPath.row].name
-        cell.titleLabel.textAlignment = .center
         
-        cell.descriptionLabel.text = listOfPizzas[indexPath.row].description
-        cell.descriptionLabel.textAlignment = .center
+        let pizzaDetails = listOfPizzas[indexPath.row]
+        cell.setup(with: pizzaDetails)
         
-        cell.orderButton.titleLabel?.text = "$\(listOfPizzas[indexPath.row].price)"
-        cell.orderButton.layer.borderColor = UIColor.red.cgColor
-        cell.orderButton.layer.borderWidth = 1.5
-        cell.orderButton.layer.cornerRadius = 15.0 // height / 2
-        
-        cell.orderButton.layer.masksToBounds = true
-        
-        cell.pizzaImage.image = listOfPizzas[indexPath.row].image
         return cell
     }
+}
+
+extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         print("You tapped me!")
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200.0
+        return UITableView.automaticDimension
     }
 
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
