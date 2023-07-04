@@ -10,10 +10,10 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     let listOfPizzas: [PizzaDetails] = [
-        PizzaDetails(name: "macarella", description: "very tasty overall good choice for the first try", price: 500, image: UIImage(systemName: "cloud")!),
-        PizzaDetails(name: "anapizza", description: "awful overall shit choice for the first try", price: 300, image: UIImage(systemName: "cloud")!),
-        PizzaDetails(name: "dodo", description: "default tasty overall good choice for the first try", price: 450, image: UIImage(systemName: "cloud")!),
-        PizzaDetails(name: "kfc", description: "piece of shit don't eat it", price: 60000000000000, image: UIImage(systemName: "cloud")!)]
+        PizzaDetails(name: "macarella", description: "very tasty overall good choice for the first try", price: 500, image: UIImage(named: "images")!),
+        PizzaDetails(name: "anapizza", description: "awful overall shit choice for the first try", price: 300, image: UIImage(named: "images-2")!),
+        PizzaDetails(name: "dodo", description: "default tasty overall good choice for the first try", price: 450, image: UIImage(named: "images-3")!),
+        PizzaDetails(name: "kfc", description: "piece of shit don't eat it", price: 60000000000000, image: UIImage(named: "images-4")!)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
