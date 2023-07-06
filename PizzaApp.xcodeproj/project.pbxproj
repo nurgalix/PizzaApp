@@ -14,7 +14,9 @@
 		DCCFA5D52A50742000773823 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCCFA5D42A50742000773823 /* Assets.xcassets */; };
 		DCCFA5D82A50742000773823 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCCFA5D62A50742000773823 /* LaunchScreen.storyboard */; };
 		DCCFA5E02A507DB800773823 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFA5DF2A507DB800773823 /* MyTableViewCell.swift */; };
-		DCCFA5E32A519A2F00773823 /* PizzaDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFA5E22A519A2F00773823 /* PizzaDetails.swift */; };
+		DCCFA5E72A55405100773823 /* PizzaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFA5E62A55405100773823 /* PizzaManager.swift */; };
+		DCCFA5E92A5572B900773823 /* PizzaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFA5E82A5572B900773823 /* PizzaData.swift */; };
+		DCCFA5EB2A55732200773823 /* PizzaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFA5EA2A55732200773823 /* PizzaModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +29,9 @@
 		DCCFA5D72A50742000773823 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCCFA5D92A50742000773823 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCCFA5DF2A507DB800773823 /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
-		DCCFA5E22A519A2F00773823 /* PizzaDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaDetails.swift; sourceTree = "<group>"; };
+		DCCFA5E62A55405100773823 /* PizzaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaManager.swift; sourceTree = "<group>"; };
+		DCCFA5E82A5572B900773823 /* PizzaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaData.swift; sourceTree = "<group>"; };
+		DCCFA5EA2A55732200773823 /* PizzaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +80,9 @@
 		DCCFA5E12A519A1500773823 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DCCFA5E22A519A2F00773823 /* PizzaDetails.swift */,
+				DCCFA5E62A55405100773823 /* PizzaManager.swift */,
+				DCCFA5E82A5572B900773823 /* PizzaData.swift */,
+				DCCFA5EA2A55732200773823 /* PizzaModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -153,10 +159,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCCFA5D02A50742000773823 /* ViewController.swift in Sources */,
+				DCCFA5E72A55405100773823 /* PizzaManager.swift in Sources */,
+				DCCFA5EB2A55732200773823 /* PizzaModel.swift in Sources */,
+				DCCFA5E92A5572B900773823 /* PizzaData.swift in Sources */,
 				DCCFA5E02A507DB800773823 /* MyTableViewCell.swift in Sources */,
 				DCCFA5CC2A50742000773823 /* AppDelegate.swift in Sources */,
 				DCCFA5CE2A50742000773823 /* SceneDelegate.swift in Sources */,
-				DCCFA5E32A519A2F00773823 /* PizzaDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

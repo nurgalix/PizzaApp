@@ -1,14 +1,15 @@
 //
-//  PizzaDetails.swift
+//  PizzaModel.swift
 //  PizzaApp
 //
-//  Created by Nurgali on 02.07.2023.
+//  Created by Nurgali on 05.07.2023.
 //
 
 import Foundation
+
 import UIKit
 
-struct PizzaDetails {
+struct PizzaModel {
     let name: String
     let description: String
     let price: Int

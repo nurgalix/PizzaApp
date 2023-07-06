@@ -7,19 +7,24 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    @IBOutlet var tableView: UITableView!
-    let listOfPizzas: [PizzaDetails] = [
-        PizzaDetails(name: "macarella", description: "very tasty overall good choice for the first try", price: 500, image: UIImage(named: "images")!),
-        PizzaDetails(name: "anapizza", description: "awful overall shit choice for the first try", price: 300, image: UIImage(named: "images-2")!),
-        PizzaDetails(name: "dodo", description: "default tasty overall good choice for the first try", price: 450, image: UIImage(named: "images-3")!),
-        PizzaDetails(name: "kfc", description: "piece of shit don't eat it", price: 60000000000000, image: UIImage(named: "images-4")!)]
+final class ViewController: UIViewController {
     
+    // MARK: - IBOutlets
+    
+    @IBOutlet private weak var tableView: UITableView!
+    
+    // Properties
+    private var pizzaManager = PizzaManager()
+    private var listOfPizzas: [Pizza] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         tableView.dataSource = self
         tableView.delegate = self
+        
+        pizzaManager.delegate = self
+        pizzaManager.performRequest()
         
         navigationItem.title = "Pizza shop"
     }
@@ -33,8 +38,8 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MyTableViewCell
         
-        let pizzaDetails = listOfPizzas[indexPath.row]
-        cell.setup(with: pizzaDetails)
+        let pizza = listOfPizzas[indexPath.row]
+        cell.setup(with: pizza)
         
         return cell
     }
@@ -44,7 +49,6 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print("You tapped me!")
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -53,5 +57,16 @@ extension ViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100.0
+    }
+}
+
+extension ViewController: PizzaManagerDelegate {
+    func didFetchPizzas(_ pizzas: [Pizza]) {
+        self.listOfPizzas = pizzas
+        tableView.reloadData()
+    }
+    
+    func didFailWithError(_ error: Error) {
+        print(error)
     }
 }

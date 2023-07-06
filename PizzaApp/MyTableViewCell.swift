@@ -33,11 +33,23 @@ class MyTableViewCell: UITableViewCell {
     
     // MARK: - Configure
     
-    func setup(with pizzaDetails: PizzaDetails) {
-        titleLabel.text = pizzaDetails.name
-        descriptionLabel.text = pizzaDetails.description
-        orderButton.titleLabel?.text = "$\(pizzaDetails.price)"
-        pizzaImage.image = pizzaDetails.image
+    func setup(with pizza: Pizza) {
+        titleLabel.text = pizza.title
+        descriptionLabel.text = "No data"
+        orderButton.titleLabel?.text = "No price"
+        pizzaImage.image = UIImage.checkmark
+        let imageUrl = "https://spoonacular.com/recipeImages/" + pizza.image
+//        let data = try? Data(contentsOf: url!)
+        if let url = URL(string: imageUrl) {
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                // Error handling...
+                guard data != nil else { return }
+                
+                DispatchQueue.main.async {
+                    self.pizzaImage.image = UIImage(data: data!)
+                }
+            }.resume()
+        }
     }
     
     // MARK: - Private
@@ -56,24 +68,4 @@ class MyTableViewCell: UITableViewCell {
         separatorInset = .zero
         layoutMargins = .zero
     }
-    
-    
-}
-
-
-class Person {
-    weak var pet: Pet?
-}
-
-class Pet {
-    var owner: Person?
-}
-
-
-func referenceCycleExample() {
-    let jPet = Pet()
-    let mikePerson = Person()
-    
-    jPet.owner = mikePerson
-    mikePerson.pet = jPet
 }
