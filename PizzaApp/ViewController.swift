@@ -16,7 +16,8 @@ final class ViewController: UIViewController {
     // Properties
     private var pizzaManager = PizzaManager()
     private var listOfPizzas: [Pizza] = []
-
+    private var id: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -54,9 +55,18 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        id = self.listOfPizzas[indexPath.row].id
         performSegue(withIdentifier: "segue", sender: cell)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // get a reference to the second view controller
+        let detailedViewController = segue.destination as! DetailedViewController
+        
+        // set a variable in the second view controller with the data to pass
+        detailedViewController.id = id
+    }
+
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
@@ -70,6 +80,7 @@ extension ViewController: UITableViewDelegate {
 extension ViewController: PizzaManagerDelegate {
     func didFetchPizzas(_ pizzas: [Pizza]) {
         self.listOfPizzas = pizzas
+//        id =
         tableView.reloadData()
     }
     

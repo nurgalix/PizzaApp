@@ -8,10 +8,13 @@
 import UIKit
 
 class DetailedViewController: UIViewController {
-
+    
+    @IBOutlet weak var someLabel: UILabel!
+    var id: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        someLabel.text = String(id)
         // Do any additional setup after loading the view.
     }
     
