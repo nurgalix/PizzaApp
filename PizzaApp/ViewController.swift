@@ -28,6 +28,10 @@ final class ViewController: UIViewController {
         
         navigationItem.title = "Pizza shop"
     }
+//
+//    override func performSegue(withIdentifier identifier: String, sender: Any?) {
+//        <#code#>
+//    }
 }
 
 extension ViewController: UITableViewDataSource {
@@ -48,7 +52,10 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        performSegue(withIdentifier: "segue", sender: cell)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

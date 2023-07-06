@@ -32,7 +32,6 @@ struct PizzaManager {
                     self.delegate?.didFetchPizzas(pizzas)
                 }
             }
-            
         }.resume()
     }
     

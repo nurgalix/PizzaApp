@@ -14,6 +14,8 @@ class MyTableViewCell: UITableViewCell {
     @IBOutlet private weak var orderButton: UIButton!
     @IBOutlet private weak var pizzaImage: UIImageView!
     
+    private var id: Int = 0
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -21,6 +23,7 @@ class MyTableViewCell: UITableViewCell {
     }
     
     @IBAction func didTapButton(_ sender: Any) {
+        
     }
     
     override func layoutSubviews() {
@@ -38,6 +41,7 @@ class MyTableViewCell: UITableViewCell {
         descriptionLabel.text = "No data"
         orderButton.titleLabel?.text = "No price"
         pizzaImage.image = UIImage.checkmark
+        id = pizza.id
         let imageUrl = "https://spoonacular.com/recipeImages/" + pizza.image
 //        let data = try? Data(contentsOf: url!)
         if let url = URL(string: imageUrl) {
