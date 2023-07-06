@@ -9,9 +9,15 @@ import Foundation
 
 import UIKit
 
-struct PizzaModel {
-    let name: String
-    let description: String
-    let price: Int
-    let image: UIImage
+struct PizzaDetail: Decodable {
+    let cheap, veryPopular: Bool
+    let preparationMinutes: Int
+    let pricePerServing: Double
+    let id: Int
+    let title: String
+    let readyInMinutes: Int
+    let sourceUrl: String
+    let image: String
+    let summary: String
+    let cuisines, diets: [String]
 }

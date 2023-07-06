@@ -115,9 +115,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ea-6z-Ctv">
-                                <rect key="frame" x="175" y="416" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ea-6z-Ctv">
+                                <rect key="frame" x="168" y="403" width="57" height="118"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -125,6 +124,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g4g-1h-m5D"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="g4g-1h-m5D" firstAttribute="trailing" secondItem="2ea-6z-Ctv" secondAttribute="trailing" constant="168" id="6pD-v0-uZZ"/>
+                            <constraint firstItem="g4g-1h-m5D" firstAttribute="bottom" secondItem="2ea-6z-Ctv" secondAttribute="bottom" constant="248" id="AQh-LS-rFc"/>
+                            <constraint firstItem="2ea-6z-Ctv" firstAttribute="top" secondItem="g4g-1h-m5D" secondAttribute="top" constant="248" id="RG0-bd-X3x"/>
+                            <constraint firstItem="2ea-6z-Ctv" firstAttribute="leading" secondItem="g4g-1h-m5D" secondAttribute="leading" constant="168" id="mp7-CO-tRv"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zxQ-I2-1yA"/>
                     <connections>
@@ -133,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f4k-ts-d3z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2722" y="10"/>
+            <point key="canvasLocation" x="2721.3740458015268" y="9.8591549295774659"/>
         </scene>
         <!--Item-->
         <scene sceneID="HKL-Qk-g9K">

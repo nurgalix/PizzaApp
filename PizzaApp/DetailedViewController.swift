@@ -10,12 +10,15 @@ import UIKit
 class DetailedViewController: UIViewController {
     
     @IBOutlet weak var someLabel: UILabel!
+    
     var id: Int = 0
+    private var pizzaManager = PizzaManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        someLabel.text = String(id)
         // Do any additional setup after loading the view.
+        pizzaManager.delegateDetail = self
+        pizzaManager.performRequest(for: id)
     }
     
 
@@ -29,4 +32,10 @@ class DetailedViewController: UIViewController {
     }
     */
 
+}
+
+extension DetailedViewController: DetailPizzaManagerDelegate {
+    func didFetchPizza(_ pizza: PizzaDetail) {
+        self.someLabel.text = pizza.title
+    }
 }
