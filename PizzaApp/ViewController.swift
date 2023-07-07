@@ -29,10 +29,6 @@ final class ViewController: UIViewController {
         
         navigationItem.title = "Pizza shop"
     }
-//
-//    override func performSegue(withIdentifier identifier: String, sender: Any?) {
-//        <#code#>
-//    }
 }
 
 extension ViewController: UITableViewDataSource {
@@ -80,7 +76,6 @@ extension ViewController: UITableViewDelegate {
 extension ViewController: PizzaManagerDelegate {
     func didFetchPizzas(_ pizzas: [Pizza]) {
         self.listOfPizzas = pizzas
-//        id =
         tableView.reloadData()
     }
     
