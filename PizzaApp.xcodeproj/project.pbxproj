@@ -18,6 +18,8 @@
 		DCCFA5E92A5572B900773823 /* PizzaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFA5E82A5572B900773823 /* PizzaData.swift */; };
 		DCCFA5EB2A55732200773823 /* PizzaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFA5EA2A55732200773823 /* PizzaModel.swift */; };
 		DCCFA5ED2A56D14B00773823 /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFA5EC2A56D14B00773823 /* DetailedViewController.swift */; };
+		DCCFA5EF2A59C08500773823 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFA5EE2A59C08500773823 /* FavoritesViewController.swift */; };
+		DCCFA5F12A59C4BC00773823 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFA5F02A59C4BC00773823 /* OrderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		DCCFA5E82A5572B900773823 /* PizzaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaData.swift; sourceTree = "<group>"; };
 		DCCFA5EA2A55732200773823 /* PizzaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaModel.swift; sourceTree = "<group>"; };
 		DCCFA5EC2A56D14B00773823 /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
+		DCCFA5EE2A59C08500773823 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		DCCFA5F02A59C4BC00773823 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 				DCCFA5D92A50742000773823 /* Info.plist */,
 				DCCFA5DF2A507DB800773823 /* MyTableViewCell.swift */,
 				DCCFA5EC2A56D14B00773823 /* DetailedViewController.swift */,
+				DCCFA5EE2A59C08500773823 /* FavoritesViewController.swift */,
+				DCCFA5F02A59C4BC00773823 /* OrderViewController.swift */,
 			);
 			path = PizzaApp;
 			sourceTree = "<group>";
@@ -162,6 +168,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCCFA5D02A50742000773823 /* ViewController.swift in Sources */,
+				DCCFA5F12A59C4BC00773823 /* OrderViewController.swift in Sources */,
+				DCCFA5EF2A59C08500773823 /* FavoritesViewController.swift in Sources */,
 				DCCFA5E72A55405100773823 /* PizzaManager.swift in Sources */,
 				DCCFA5ED2A56D14B00773823 /* DetailedViewController.swift in Sources */,
 				DCCFA5EB2A55732200773823 /* PizzaModel.swift in Sources */,
