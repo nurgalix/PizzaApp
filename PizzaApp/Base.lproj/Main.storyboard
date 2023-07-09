@@ -188,7 +188,7 @@
         <scene sceneID="HKL-Qk-g9K">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="boL-9Z-g21" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="dgB-7L-6dw"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="fork.knife.circle" catalog="system" selectedImage="fork.knife" id="dgB-7L-6dw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="isI-pk-bJJ">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
@@ -232,13 +232,13 @@
                         <viewLayoutGuide key="safeArea" id="ATV-hr-Gu0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="BoF-fU-uzf"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="star.fill" catalog="system" selectedImage="star.fill" id="BoF-fU-uzf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDV-5G-nUn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-460" y="713"/>
         </scene>
-        <!--Item-->
+        <!--Order-->
         <scene sceneID="Nor-ao-irM">
             <objects>
                 <viewController id="Edc-0A-wxj" customClass="OrderViewController" customModule="PizzaApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -248,7 +248,7 @@
                         <viewLayoutGuide key="safeArea" id="a2H-ok-pqI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="nLE-Ig-zvD"/>
+                    <tabBarItem key="tabBarItem" title="Order" image="basket" catalog="system" selectedImage="basket" id="nLE-Ig-zvD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMe-ah-Pdw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -256,6 +256,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="basket" catalog="system" width="128" height="108"/>
+        <image name="fork.knife" catalog="system" width="94" height="128"/>
+        <image name="fork.knife.circle" catalog="system" width="128" height="123"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
