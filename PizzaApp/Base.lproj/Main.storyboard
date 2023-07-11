@@ -234,10 +234,20 @@
                     <view key="view" contentMode="scaleToFill" id="qqb-Yn-FcP">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cnS-Qx-cA5">
+                                <rect key="frame" x="76" y="59" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ATV-hr-Gu0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favorites" image="star.fill" catalog="system" selectedImage="star.fill" id="BoF-fU-uzf"/>
+                    <connections>
+                        <outlet property="tableView" destination="cnS-Qx-cA5" id="L2l-5T-pfO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDV-5G-nUn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -250,10 +260,33 @@
                     <view key="view" contentMode="scaleToFill" id="xw9-il-15N">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oPQ-w5-7Mu">
+                                <rect key="frame" x="8" y="67" width="377" height="120"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKL-sg-YRz">
+                                <rect key="frame" x="159" y="252" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="a2H-ok-pqI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AKL-sg-YRz" firstAttribute="top" secondItem="oPQ-w5-7Mu" secondAttribute="bottom" constant="65" id="IDT-N5-wev"/>
+                            <constraint firstItem="a2H-ok-pqI" firstAttribute="trailing" secondItem="oPQ-w5-7Mu" secondAttribute="trailing" constant="8" id="Jyv-Tn-JlU"/>
+                            <constraint firstItem="oPQ-w5-7Mu" firstAttribute="leading" secondItem="a2H-ok-pqI" secondAttribute="leading" constant="8" id="Tnr-ll-XWf"/>
+                            <constraint firstItem="a2H-ok-pqI" firstAttribute="bottom" secondItem="oPQ-w5-7Mu" secondAttribute="bottom" constant="582" id="cBb-4S-ezx"/>
+                            <constraint firstItem="AKL-sg-YRz" firstAttribute="centerX" secondItem="oPQ-w5-7Mu" secondAttribute="centerX" id="feZ-ta-KEf"/>
+                            <constraint firstItem="oPQ-w5-7Mu" firstAttribute="top" secondItem="a2H-ok-pqI" secondAttribute="top" constant="8" id="hNC-dG-N6w"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Order" image="basket" catalog="system" selectedImage="basket" id="nLE-Ig-zvD"/>
+                    <connections>
+                        <outlet property="orderButton" destination="AKL-sg-YRz" id="dwN-1v-ZGl"/>
+                        <outlet property="tableView" destination="oPQ-w5-7Mu" id="vh8-FZ-n6f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMe-ah-Pdw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

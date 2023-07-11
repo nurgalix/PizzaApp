@@ -8,10 +8,13 @@
 import UIKit
 
 class FavoritesViewController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
+    private var favList: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.title = "Favorites"
         // Do any additional setup after loading the view.
     }
     

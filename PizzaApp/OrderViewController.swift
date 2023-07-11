@@ -8,10 +8,12 @@
 import UIKit
 
 class OrderViewController: UIViewController {
-
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var orderButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.title = "Current Order"
         // Do any additional setup after loading the view.
     }
     
