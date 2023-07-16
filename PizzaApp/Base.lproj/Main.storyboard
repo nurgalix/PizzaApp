@@ -155,6 +155,9 @@
                                                         <rect key="frame" x="0.0" y="217.66666666666671" width="75" height="280.33333333333326"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                                        <connections>
+                                                            <action selector="buttonPressed:" destination="bmQ-BZ-V9B" eventType="touchUpInside" id="Bhc-0e-NFs"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -225,6 +228,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="o3n-x6-Of1" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2rC-UT-SwZ">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -281,20 +285,31 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Button"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSv-aX-Bzc">
+                                <rect key="frame" x="175" y="415" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="a2H-ok-pqI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="AKL-sg-YRz" firstAttribute="top" secondItem="oPQ-w5-7Mu" secondAttribute="bottom" constant="65" id="IDT-N5-wev"/>
                             <constraint firstItem="a2H-ok-pqI" firstAttribute="trailing" secondItem="oPQ-w5-7Mu" secondAttribute="trailing" constant="8" id="Jyv-Tn-JlU"/>
+                            <constraint firstItem="HSv-aX-Bzc" firstAttribute="leading" secondItem="a2H-ok-pqI" secondAttribute="leading" constant="175" id="MkU-fJ-igt"/>
                             <constraint firstItem="oPQ-w5-7Mu" firstAttribute="leading" secondItem="a2H-ok-pqI" secondAttribute="leading" constant="8" id="Tnr-ll-XWf"/>
                             <constraint firstItem="a2H-ok-pqI" firstAttribute="bottom" secondItem="oPQ-w5-7Mu" secondAttribute="bottom" constant="582" id="cBb-4S-ezx"/>
+                            <constraint firstItem="a2H-ok-pqI" firstAttribute="bottom" secondItem="HSv-aX-Bzc" secondAttribute="bottom" constant="333" id="caw-TV-PwU"/>
+                            <constraint firstItem="HSv-aX-Bzc" firstAttribute="centerY" secondItem="xw9-il-15N" secondAttribute="centerY" id="ck6-Uj-07c"/>
                             <constraint firstItem="AKL-sg-YRz" firstAttribute="centerX" secondItem="oPQ-w5-7Mu" secondAttribute="centerX" id="feZ-ta-KEf"/>
                             <constraint firstItem="oPQ-w5-7Mu" firstAttribute="top" secondItem="a2H-ok-pqI" secondAttribute="top" constant="8" id="hNC-dG-N6w"/>
+                            <constraint firstItem="HSv-aX-Bzc" firstAttribute="centerX" secondItem="AKL-sg-YRz" secondAttribute="centerX" id="ruw-yC-oWE"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Order" image="basket" catalog="system" selectedImage="basket" id="nLE-Ig-zvD"/>
                     <connections>
+                        <outlet property="arrayOrder" destination="HSv-aX-Bzc" id="sOF-Ky-mTY"/>
                         <outlet property="orderButton" destination="AKL-sg-YRz" id="dwN-1v-ZGl"/>
                         <outlet property="tableView" destination="oPQ-w5-7Mu" id="vh8-FZ-n6f"/>
                     </connections>

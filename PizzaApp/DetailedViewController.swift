@@ -8,6 +8,9 @@
 import UIKit
 
 class DetailedViewController: UIViewController {
+    
+    let viewModel = ViewModel()
+    
     @IBOutlet weak var pizzaImage: UIImageView!
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var summaryHeaderLabel: UILabel!
@@ -16,6 +19,9 @@ class DetailedViewController: UIViewController {
     var id: Int = 0
     private var pizzaManager = PizzaManager()
     
+    @IBAction func buttonPressed(_ sender: Any) {
+        viewModel.addItem(navigationItem.title ?? "error in title")
+    }   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

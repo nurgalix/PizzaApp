@@ -8,13 +8,29 @@
 import UIKit
 
 class OrderViewController: UIViewController {
+    
+    let viewModel = ViewModel()
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var orderButton: UIButton!
+    @IBOutlet weak var arrayOrder: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Current Order"
         // Do any additional setup after loading the view.
+        viewModel.observableArray.addObserver { [weak self] in
+            // Update UI or perform any action when the array changes
+            self?.updateUI()
+        }
+    }
+    
+    func updateUI() {
+        // Update your UI based on the changes in the observable array
+        let array = viewModel.observableArray.array
+        arrayOrder.text = array[0]
+        print(arrayOrder ?? "gg")
+        // ...
     }
     
 
