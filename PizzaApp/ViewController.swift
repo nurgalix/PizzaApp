@@ -29,6 +29,14 @@ final class ViewController: UIViewController {
         
         navigationItem.title = "Pizza shop"
     }
+    
+    func navigateBack() {
+        if let presentingViewController = presentingViewController as? DetailedViewController {
+            presentingViewController.isTabBarHidden = false
+            presentingViewController.tabBarController?.tabBar.isHidden = false
+        }
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 extension ViewController: UITableViewDataSource {

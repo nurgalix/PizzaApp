@@ -17,6 +17,7 @@ class DetailedViewController: UIViewController {
     @IBOutlet weak var cuisinesLabel: UILabel!
     
     var id: Int = 0
+    var isTabBarHidden = false
     private var pizzaManager = PizzaManager()
     
     @IBAction func buttonPressed(_ sender: Any) {
@@ -32,6 +33,17 @@ class DetailedViewController: UIViewController {
 //        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(labelTapped(_:)))
 //        summaryLabel.addGestureRecognizer(tapGesture)
 //        summaryLabel.isUserInteractionEnabled = true
+    }
+    
+    func presentNewViewController() {
+        isTabBarHidden = true
+        let viewControllerB = ViewController()
+        present(viewControllerB, animated: true, completion: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tabBarController?.tabBar.isHidden = isTabBarHidden
     }
     
     // MARK: - TO FIX
