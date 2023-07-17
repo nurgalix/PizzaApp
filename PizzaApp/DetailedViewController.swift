@@ -21,7 +21,8 @@ class DetailedViewController: UIViewController {
     private var pizzaManager = PizzaManager()
     
     @IBAction func buttonPressed(_ sender: Any) {
-        viewModel.addItem(navigationItem.title ?? "error in title")
+        viewModel.addItem(navigationItem.title!)
+        print(navigationItem.title)
     }   
     override func viewDidLoad() {
         super.viewDidLoad()

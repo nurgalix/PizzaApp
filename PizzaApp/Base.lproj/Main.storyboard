@@ -276,15 +276,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oPQ-w5-7Mu">
-                                <rect key="frame" x="8" y="67" width="377" height="120"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKL-sg-YRz">
-                                <rect key="frame" x="159" y="252" width="75" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSv-aX-Bzc">
                                 <rect key="frame" x="175" y="415" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -295,23 +286,14 @@
                         <viewLayoutGuide key="safeArea" id="a2H-ok-pqI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="AKL-sg-YRz" firstAttribute="top" secondItem="oPQ-w5-7Mu" secondAttribute="bottom" constant="65" id="IDT-N5-wev"/>
-                            <constraint firstItem="a2H-ok-pqI" firstAttribute="trailing" secondItem="oPQ-w5-7Mu" secondAttribute="trailing" constant="8" id="Jyv-Tn-JlU"/>
                             <constraint firstItem="HSv-aX-Bzc" firstAttribute="leading" secondItem="a2H-ok-pqI" secondAttribute="leading" constant="175" id="MkU-fJ-igt"/>
-                            <constraint firstItem="oPQ-w5-7Mu" firstAttribute="leading" secondItem="a2H-ok-pqI" secondAttribute="leading" constant="8" id="Tnr-ll-XWf"/>
-                            <constraint firstItem="a2H-ok-pqI" firstAttribute="bottom" secondItem="oPQ-w5-7Mu" secondAttribute="bottom" constant="582" id="cBb-4S-ezx"/>
                             <constraint firstItem="a2H-ok-pqI" firstAttribute="bottom" secondItem="HSv-aX-Bzc" secondAttribute="bottom" constant="333" id="caw-TV-PwU"/>
                             <constraint firstItem="HSv-aX-Bzc" firstAttribute="centerY" secondItem="xw9-il-15N" secondAttribute="centerY" id="ck6-Uj-07c"/>
-                            <constraint firstItem="AKL-sg-YRz" firstAttribute="centerX" secondItem="oPQ-w5-7Mu" secondAttribute="centerX" id="feZ-ta-KEf"/>
-                            <constraint firstItem="oPQ-w5-7Mu" firstAttribute="top" secondItem="a2H-ok-pqI" secondAttribute="top" constant="8" id="hNC-dG-N6w"/>
-                            <constraint firstItem="HSv-aX-Bzc" firstAttribute="centerX" secondItem="AKL-sg-YRz" secondAttribute="centerX" id="ruw-yC-oWE"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Order" image="basket" catalog="system" selectedImage="basket" id="nLE-Ig-zvD"/>
                     <connections>
                         <outlet property="arrayOrder" destination="HSv-aX-Bzc" id="sOF-Ky-mTY"/>
-                        <outlet property="orderButton" destination="AKL-sg-YRz" id="dwN-1v-ZGl"/>
-                        <outlet property="tableView" destination="oPQ-w5-7Mu" id="vh8-FZ-n6f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMe-ah-Pdw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

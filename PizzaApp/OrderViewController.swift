@@ -11,8 +11,6 @@ class OrderViewController: UIViewController {
     
     let viewModel = ViewModel()
     
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var orderButton: UIButton!
     @IBOutlet weak var arrayOrder: UILabel!
     
     override func viewDidLoad() {
