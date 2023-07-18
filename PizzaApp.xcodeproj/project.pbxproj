@@ -21,6 +21,7 @@
 		DCCFA5EF2A59C08500773823 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFA5EE2A59C08500773823 /* FavoritesViewController.swift */; };
 		DCCFA5F12A59C4BC00773823 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFA5F02A59C4BC00773823 /* OrderViewController.swift */; };
 		DCD0F1D62A64445200903EE3 /* ObservableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD0F1D52A64445200903EE3 /* ObservableArray.swift */; };
+		DCD0F1D82A6704A600903EE3 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD0F1D72A6704A600903EE3 /* OrderTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		DCCFA5EE2A59C08500773823 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		DCCFA5F02A59C4BC00773823 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		DCD0F1D52A64445200903EE3 /* ObservableArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableArray.swift; sourceTree = "<group>"; };
+		DCD0F1D72A6704A600903EE3 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				DCCFA5EE2A59C08500773823 /* FavoritesViewController.swift */,
 				DCCFA5F02A59C4BC00773823 /* OrderViewController.swift */,
 				DCD0F1D52A64445200903EE3 /* ObservableArray.swift */,
+				DCD0F1D72A6704A600903EE3 /* OrderTableViewCell.swift */,
 			);
 			path = PizzaApp;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				DCCFA5E72A55405100773823 /* PizzaManager.swift in Sources */,
 				DCCFA5ED2A56D14B00773823 /* DetailedViewController.swift in Sources */,
 				DCCFA5EB2A55732200773823 /* PizzaModel.swift in Sources */,
+				DCD0F1D82A6704A600903EE3 /* OrderTableViewCell.swift in Sources */,
 				DCCFA5E92A5572B900773823 /* PizzaData.swift in Sources */,
 				DCCFA5E02A507DB800773823 /* MyTableViewCell.swift in Sources */,
 				DCD0F1D62A64445200903EE3 /* ObservableArray.swift in Sources */,

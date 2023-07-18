@@ -9,28 +9,33 @@ import UIKit
 
 class OrderViewController: UIViewController {
     
-    let viewModel = ViewModel()
-    
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var arrayOrder: UILabel!
+    
+    
+    var list: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Current Order"
         // Do any additional setup after loading the view.
-        viewModel.observableArray.addObserver { [weak self] in
-            // Update UI or perform any action when the array changes
-            self?.updateUI()
-        }
+        tableView.dataSource = self
+        tableView.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(updateArray(_:)), name: NSNotification.Name("MyModelArrayUpdated"), object: nil)
     }
     
-    func updateUI() {
-        // Update your UI based on the changes in the observable array
-        let array = viewModel.observableArray.array
-        arrayOrder.text = array[0]
-        print(arrayOrder ?? "gg")
-        // ...
+    @objc func updateArray(_ notification: Notification) {
+        // Update your UI elements with the modified array
+        // For example, reload your UITableView with the updated data
+        // MyModel.shared.dataArray contains the updated array
+        arrayOrder.text = MyModel.shared.dataArray[0]
+        list = MyModel.shared.dataArray
+        print(MyModel.shared.dataArray)
     }
     
+    deinit {
+        // Unsubscribe from notifications when the view controller is deallocated
+        NotificationCenter.default.removeObserver(self)
+    }
 
     /*
     // MARK: - Navigation
@@ -42,4 +47,15 @@ class OrderViewController: UIViewController {
     }
     */
 
+}
+
+extension OrderViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return list.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell", for: indexPath) as! OrderTableViewCell
+        return cell
+    }
 }

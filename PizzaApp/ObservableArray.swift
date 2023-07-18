@@ -7,28 +7,8 @@
 
 import Foundation
 
-class ObservableArray<T> {
-    var array: [T] = [] {
-        didSet {
-            notifyObservers()
-        }
-    }
+class MyModel {
+    static let shared = MyModel() // Singleton instance
     
-    private var observers: [() -> Void] = []
-    
-    func addObserver(_ observer: @escaping () -> Void) {
-        observers.append(observer)
-    }
-    
-    private func notifyObservers() {
-        observers.forEach { $0() }
-    }
-}
-
-class ViewModel {
-    let observableArray = ObservableArray<String>()
-    
-    func addItem(_ item: String) {
-        observableArray.array.append(item)
-    }
+    var dataArray: [String] = []
 }

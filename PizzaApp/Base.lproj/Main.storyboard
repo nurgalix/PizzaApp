@@ -156,7 +156,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="filled" title="Button"/>
                                                         <connections>
-                                                            <action selector="buttonPressed:" destination="bmQ-BZ-V9B" eventType="touchUpInside" id="Bhc-0e-NFs"/>
+                                                            <action selector="buttonPressed:" destination="bmQ-BZ-V9B" eventType="touchUpInside" id="pvW-fV-TW5"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -282,23 +282,54 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="X21-0b-lyG">
+                                <rect key="frame" x="8" y="67" width="377" height="256"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="h2G-mi-4YW"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="orderCell" id="lKQ-DW-Tz7">
+                                        <rect key="frame" x="0.0" y="50" width="377" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lKQ-DW-Tz7" id="Jn7-Bo-WFb">
+                                            <rect key="frame" x="0.0" y="0.0" width="377" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UsE-kH-btq">
+                                                    <rect key="frame" x="40" y="11" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="a2H-ok-pqI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="HSv-aX-Bzc" firstAttribute="leading" secondItem="a2H-ok-pqI" secondAttribute="leading" constant="175" id="MkU-fJ-igt"/>
-                            <constraint firstItem="a2H-ok-pqI" firstAttribute="bottom" secondItem="HSv-aX-Bzc" secondAttribute="bottom" constant="333" id="caw-TV-PwU"/>
-                            <constraint firstItem="HSv-aX-Bzc" firstAttribute="centerY" secondItem="xw9-il-15N" secondAttribute="centerY" id="ck6-Uj-07c"/>
+                            <constraint firstItem="X21-0b-lyG" firstAttribute="top" secondItem="a2H-ok-pqI" secondAttribute="top" constant="8" id="B3q-kF-TfA"/>
+                            <constraint firstItem="HSv-aX-Bzc" firstAttribute="centerX" secondItem="X21-0b-lyG" secondAttribute="centerX" id="ETb-xD-5jN"/>
+                            <constraint firstItem="HSv-aX-Bzc" firstAttribute="leading" secondItem="a2H-ok-pqI" secondAttribute="leading" constant="175" id="Zfj-Ao-FgW"/>
+                            <constraint firstItem="HSv-aX-Bzc" firstAttribute="centerY" secondItem="xw9-il-15N" secondAttribute="centerY" id="geB-um-qci"/>
+                            <constraint firstItem="a2H-ok-pqI" firstAttribute="bottom" secondItem="HSv-aX-Bzc" secondAttribute="bottom" constant="333" id="hDk-ZC-Ur2"/>
+                            <constraint firstItem="a2H-ok-pqI" firstAttribute="trailing" secondItem="X21-0b-lyG" secondAttribute="trailing" constant="8" id="ow0-0b-B1A"/>
+                            <constraint firstItem="X21-0b-lyG" firstAttribute="leading" secondItem="a2H-ok-pqI" secondAttribute="leading" constant="8" id="pw7-F3-ETe"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Order" image="basket" catalog="system" selectedImage="basket" id="nLE-Ig-zvD"/>
                     <connections>
                         <outlet property="arrayOrder" destination="HSv-aX-Bzc" id="sOF-Ky-mTY"/>
+                        <outlet property="tableView" destination="X21-0b-lyG" id="Rcu-dt-NBQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMe-ah-Pdw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="442" y="713"/>
+            <point key="canvasLocation" x="441.98473282442745" y="712.67605633802816"/>
         </scene>
     </scenes>
     <resources>

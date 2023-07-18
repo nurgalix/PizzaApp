@@ -9,8 +9,6 @@ import UIKit
 
 class DetailedViewController: UIViewController {
     
-    let viewModel = ViewModel()
-    
     @IBOutlet weak var pizzaImage: UIImageView!
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var summaryHeaderLabel: UILabel!
@@ -20,10 +18,6 @@ class DetailedViewController: UIViewController {
     var isTabBarHidden = false
     private var pizzaManager = PizzaManager()
     
-    @IBAction func buttonPressed(_ sender: Any) {
-        viewModel.addItem(navigationItem.title!)
-        print(navigationItem.title)
-    }   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -34,6 +28,12 @@ class DetailedViewController: UIViewController {
 //        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(labelTapped(_:)))
 //        summaryLabel.addGestureRecognizer(tapGesture)
 //        summaryLabel.isUserInteractionEnabled = true
+    }
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        if let selectedTitle = navigationItem.title {
+            MyModel.shared.dataArray.append(selectedTitle)
+            NotificationCenter.default.post(name: NSNotification.Name("MyModelArrayUpdated"), object: nil)
+        }
     }
     
     func presentNewViewController() {
