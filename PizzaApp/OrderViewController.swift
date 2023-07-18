@@ -30,6 +30,7 @@ class OrderViewController: UIViewController {
         arrayOrder.text = MyModel.shared.dataArray[0]
         list = MyModel.shared.dataArray
         print(MyModel.shared.dataArray)
+        tableView.reloadData()
     }
     
     deinit {
@@ -56,6 +57,7 @@ extension OrderViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell", for: indexPath) as! OrderTableViewCell
+        cell.title.text = list[indexPath.row]
         return cell
     }
 }
