@@ -12,3 +12,5 @@ class MyModel {
     
     var dataArray: [String] = []
 }
+
+

@@ -22,6 +22,7 @@
 		DCCFA5F12A59C4BC00773823 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFA5F02A59C4BC00773823 /* OrderViewController.swift */; };
 		DCD0F1D62A64445200903EE3 /* ObservableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD0F1D52A64445200903EE3 /* ObservableArray.swift */; };
 		DCD0F1D82A6704A600903EE3 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD0F1D72A6704A600903EE3 /* OrderTableViewCell.swift */; };
+		DCD0F1E02A6C472000903EE3 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD0F1DF2A6C472000903EE3 /* AppState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		DCCFA5F02A59C4BC00773823 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		DCD0F1D52A64445200903EE3 /* ObservableArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableArray.swift; sourceTree = "<group>"; };
 		DCD0F1D72A6704A600903EE3 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
+		DCD0F1DF2A6C472000903EE3 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,20 +76,17 @@
 		DCCFA5CA2A50742000773823 /* PizzaApp */ = {
 			isa = PBXGroup;
 			children = (
+				DCD0F1DA2A6C45C200903EE3 /* Controllers */,
+				DCD0F1D92A6C45AB00903EE3 /* Views */,
 				DCCFA5E12A519A1500773823 /* Model */,
 				DCCFA5CB2A50742000773823 /* AppDelegate.swift */,
 				DCCFA5CD2A50742000773823 /* SceneDelegate.swift */,
-				DCCFA5CF2A50742000773823 /* ViewController.swift */,
 				DCCFA5D12A50742000773823 /* Main.storyboard */,
 				DCCFA5D42A50742000773823 /* Assets.xcassets */,
 				DCCFA5D62A50742000773823 /* LaunchScreen.storyboard */,
 				DCCFA5D92A50742000773823 /* Info.plist */,
-				DCCFA5DF2A507DB800773823 /* MyTableViewCell.swift */,
-				DCCFA5EC2A56D14B00773823 /* DetailedViewController.swift */,
-				DCCFA5EE2A59C08500773823 /* FavoritesViewController.swift */,
-				DCCFA5F02A59C4BC00773823 /* OrderViewController.swift */,
 				DCD0F1D52A64445200903EE3 /* ObservableArray.swift */,
-				DCD0F1D72A6704A600903EE3 /* OrderTableViewCell.swift */,
+				DCD0F1DF2A6C472000903EE3 /* AppState.swift */,
 			);
 			path = PizzaApp;
 			sourceTree = "<group>";
@@ -100,6 +99,34 @@
 				DCCFA5EA2A55732200773823 /* PizzaModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DCD0F1D92A6C45AB00903EE3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0F1DB2A6C45D500903EE3 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DCD0F1DA2A6C45C200903EE3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DCCFA5CF2A50742000773823 /* ViewController.swift */,
+				DCCFA5EC2A56D14B00773823 /* DetailedViewController.swift */,
+				DCCFA5EE2A59C08500773823 /* FavoritesViewController.swift */,
+				DCCFA5F02A59C4BC00773823 /* OrderViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DCD0F1DB2A6C45D500903EE3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DCCFA5DF2A507DB800773823 /* MyTableViewCell.swift */,
+				DCD0F1D72A6704A600903EE3 /* OrderTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,6 +145,8 @@
 			dependencies = (
 			);
 			name = PizzaApp;
+			packageProductDependencies = (
+			);
 			productName = PizzaApp;
 			productReference = DCCFA5C82A50742000773823 /* PizzaApp.app */;
 			productType = "com.apple.product-type.application";
@@ -146,6 +175,9 @@
 				Base,
 			);
 			mainGroup = DCCFA5BF2A50742000773823;
+			packageReferences = (
+				DCD0F1DC2A6C46FB00903EE3 /* XCRemoteSwiftPackageReference "Observable" */,
+			);
 			productRefGroup = DCCFA5C92A50742000773823 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -183,6 +215,7 @@
 				DCCFA5E92A5572B900773823 /* PizzaData.swift in Sources */,
 				DCCFA5E02A507DB800773823 /* MyTableViewCell.swift in Sources */,
 				DCD0F1D62A64445200903EE3 /* ObservableArray.swift in Sources */,
+				DCD0F1E02A6C472000903EE3 /* AppState.swift in Sources */,
 				DCCFA5CC2A50742000773823 /* AppDelegate.swift in Sources */,
 				DCCFA5CE2A50742000773823 /* SceneDelegate.swift in Sources */,
 			);
@@ -400,6 +433,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DCD0F1DC2A6C46FB00903EE3 /* XCRemoteSwiftPackageReference "Observable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/roberthein/Observable";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = DCCFA5C02A50742000773823 /* Project object */;
 }

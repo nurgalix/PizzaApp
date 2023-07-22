@@ -21,6 +21,8 @@ class OrderViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(updateArray(_:)), name: NSNotification.Name("MyModelArrayUpdated"), object: nil)
+        
+        NotificationCenter.default.
     }
     
     @objc func updateArray(_ notification: Notification) {
