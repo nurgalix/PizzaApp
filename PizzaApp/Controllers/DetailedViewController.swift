@@ -75,7 +75,7 @@ class DetailedViewController: UIViewController {
 extension DetailedViewController: DetailPizzaManagerDelegate {
     func didFetchPizza(_ pizza: PizzaDetail) {
         print("111111111111111111111" + pizza.summary + "ASDASOIDJASOIDJASDASKJDALS:DJASDAAASD")
-        summaryLabel.text = pizza.summary.substring(to: pizza.summary.endIndex)
+        summaryLabel.text = pizza.summary
         summaryLabel.numberOfLines = 0
         summaryHeaderLabel.text = "Summary"
         summaryHeaderLabel.font = .boldSystemFont(ofSize: 20)
