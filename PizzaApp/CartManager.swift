@@ -16,9 +16,15 @@ final class CartManager {
     
     private init() {}
     
-    // MARK: - Subject
+    // MARK: - Subjects
     
     private var ordersCurrentValueSubject = CurrentValueSubject<[String], Never>([])
+    
+    // MARK: - Publishers
+    
+    var ordersPublisher: AnyPublisher<[String], Never> {
+        return ordersCurrentValueSubject.eraseToAnyPublisher()
+    }
 }
 
 // MARK: - Add order
