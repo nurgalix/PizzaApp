@@ -6,50 +6,32 @@
 //
 
 import UIKit
+import Combine
 
 class OrderViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var arrayOrder: UILabel!
     
+    private var cancellable: AnyCancellable?
     
-    var list: [String] = []
+    
+    var list: [String] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         tableView.dataSource = self
         tableView.delegate = self
-        NotificationCenter.default.addObserver(self, selector: #selector(updateArray(_:)), name: NSNotification.Name("MyModelArrayUpdated"), object: nil)
         
-        NotificationCenter.default.
+        cancellable = CartManager.shared.ordersPublisher.sink { [weak self] orders in
+            self?.list = orders
+        }
     }
-    
-    @objc func updateArray(_ notification: Notification) {
-        // Update your UI elements with the modified array
-        // For example, reload your UITableView with the updated data
-        // MyModel.shared.dataArray contains the updated array
-        arrayOrder.text = MyModel.shared.dataArray[0]
-        list = MyModel.shared.dataArray
-        print(MyModel.shared.dataArray)
-        tableView.reloadData()
-    }
-    
-    deinit {
-        // Unsubscribe from notifications when the view controller is deallocated
-        NotificationCenter.default.removeObserver(self)
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension OrderViewController: UITableViewDataSource, UITableViewDelegate {

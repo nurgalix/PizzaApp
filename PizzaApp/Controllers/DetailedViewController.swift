@@ -31,8 +31,7 @@ class DetailedViewController: UIViewController {
     }
     @IBAction func buttonPressed(_ sender: UIButton) {
         if let selectedTitle = navigationItem.title {
-            MyModel.shared.dataArray.append(selectedTitle)
-            NotificationCenter.default.post(name: NSNotification.Name("MyModelArrayUpdated"), object: nil)
+            CartManager.shared.addPizza(with: selectedTitle)
         }
     }
     
@@ -75,8 +74,11 @@ class DetailedViewController: UIViewController {
 
 extension DetailedViewController: DetailPizzaManagerDelegate {
     func didFetchPizza(_ pizza: PizzaDetail) {
-        summaryLabel.text = pizza.summary
+        print("111111111111111111111" + pizza.summary + "ASDASOIDJASOIDJASDASKJDALS:DJASDAAASD")
+        summaryLabel.text = pizza.summary.substring(to: pizza.summary.endIndex)
+        summaryLabel.numberOfLines = 0
         summaryHeaderLabel.text = "Summary"
+        summaryHeaderLabel.font = .boldSystemFont(ofSize: 20)
         cuisinesLabel.text = pizza.cuisines[0]
 //        if pizza.veryPopular == true {
 //            popularityLabel.text = "Popular"

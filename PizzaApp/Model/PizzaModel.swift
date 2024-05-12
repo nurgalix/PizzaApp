@@ -7,8 +7,6 @@
 
 import Foundation
 
-import UIKit
-
 struct PizzaDetail: Decodable {
     let cheap, veryPopular: Bool
     let preparationMinutes: Int

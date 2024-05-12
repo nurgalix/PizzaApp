@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "observable",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/roberthein/Observable",
+      "state" : {
+        "revision" : "c789e973131a4c2aba2a575345a91bcc06eef38d",
+        "version" : "2.2.0"
+      }
+    }
+  ],
+  "version" : 2
+}

@@ -1,5 +1,5 @@
 //
-//  AppState.swift
+//  CartManager.swift
 //  PizzaApp
 //
 //  Created by Nurgali on 22.07.2023.
@@ -12,9 +12,17 @@ final class CartManager {
     
     // MARK: - Singleton
     
-    let shared = CartManager()
+    static let shared = CartManager()
     
     private init() {}
+    
+    // MARK: - Properties
+    
+    private(set) var orders: [String] = [] {
+        didSet {
+            ordersCurrentValueSubject.send(orders)
+        }
+    }
     
     // MARK: - Subjects
     
@@ -32,7 +40,6 @@ final class CartManager {
 extension CartManager {
     
     func addPizza(with id: String) {
-        let finalOrders = ordersCurrentValueSubject.value + [id]
-        ordersCurrentValueSubject.send(finalOrders)
+        orders.append(id)
     }
 }
