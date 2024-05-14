@@ -9,6 +9,7 @@ import UIKit
 
 class DetailedViewController: UIViewController {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pizzaImage: UIImageView!
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var summaryHeaderLabel: UILabel!
@@ -20,14 +21,9 @@ class DetailedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height)
         self.tabBarController?.tabBar.isHidden = true
         pizzaManager.delegateDetail = self
-        pizzaManager.performRequest(for: id)
-        
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(labelTapped(_:)))
-//        summaryLabel.addGestureRecognizer(tapGesture)
-//        summaryLabel.isUserInteractionEnabled = true
     }
     @IBAction func buttonPressed(_ sender: UIButton) {
         if let selectedTitle = navigationItem.title {
@@ -74,7 +70,6 @@ class DetailedViewController: UIViewController {
 
 extension DetailedViewController: DetailPizzaManagerDelegate {
     func didFetchPizza(_ pizza: PizzaDetail) {
-        print("111111111111111111111" + pizza.summary + "ASDASOIDJASOIDJASDASKJDALS:DJASDAAASD")
         summaryLabel.text = pizza.summary
         summaryLabel.numberOfLines = 0
         summaryHeaderLabel.text = "Summary"

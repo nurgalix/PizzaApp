@@ -17,6 +17,7 @@ final class ViewController: UIViewController {
     private var pizzaManager = PizzaManager()
     private var listOfPizzas: [Pizza] = []
     private var id: Int = 0
+    public var detailedPizzas: [PizzaDetail] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +49,13 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MyTableViewCell
         
         let pizza = listOfPizzas[indexPath.row]
-        cell.setup(with: pizza)
+//        print("ASDASDASDASAA")
+//        print(detailedPizzas[indexPath.row])
+//        let detail = detailedPizzas[indexPath.]
+        print(indexPath.row)
+        print(detailedPizzas[0])
+        cell.setup(with: pizza, and: detailedPizzas[0])
+        
         
         return cell
     }
@@ -82,10 +89,12 @@ extension ViewController: UITableViewDelegate {
 }
 
 extension ViewController: PizzaManagerDelegate {
-    func didFetchPizzas(_ pizzas: [Pizza]) {
+    func didFetchPizzas(_ pizzas: [Pizza], _ detailedPizzas: [PizzaDetail]) {
+        self.detailedPizzas = detailedPizzas
         self.listOfPizzas = pizzas
         tableView.reloadData()
     }
+    
     
     func didFailWithError(_ error: Error) {
         print(error)
