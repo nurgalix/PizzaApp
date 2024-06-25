@@ -36,15 +36,16 @@ class MyTableViewCell: UITableViewCell {
     
     // MARK: - Configure
     
-    func setup(with pizza: Pizza, and detail: PizzaDetail) {
+    func setup(with pizza: Pizza) {
         titleLabel.text = pizza.title
         descriptionLabel.text = "No data"
-        print()
-        orderButton.titleLabel?.text = String(detail.pricePerServing)
+        orderButton.titleLabel?.text = "No price"
         pizzaImage.image = UIImage.checkmark
         let imageUrl = "https://spoonacular.com/recipeImages/" + pizza.image
+//        let data = try? Data(contentsOf: url!)
         if let url = URL(string: imageUrl) {
             URLSession.shared.dataTask(with: url) { (data, response, error) in
+                // Error handling...
                 guard data != nil else { return }
                 DispatchQueue.main.async {
                     self.pizzaImage.image = UIImage(data: data!)
