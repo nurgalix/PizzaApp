@@ -9,7 +9,7 @@ import Foundation
 
 struct PizzaDetail: Decodable {
     let cheap, veryPopular: Bool
-    let preparationMinutes: Int
+    let preparationMinutes: Int?
     let pricePerServing: Double
     let id: Int
     let title: String
