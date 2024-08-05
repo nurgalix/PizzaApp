@@ -11,12 +11,8 @@ import Combine
 class OrderViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var arrayOrder: UILabel!
     
-    private var cancellable: AnyCancellable?
-    
-    
-    var list: [String] = [] {
+    private var list: [String] = [] {
         didSet {
             tableView.reloadData()
         }
@@ -24,13 +20,11 @@ class OrderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
         tableView.dataSource = self
         tableView.delegate = self
         
-        cancellable = CartManager.shared.ordersPublisher.sink { [weak self] orders in
-            self?.list = orders
-        }
+        
     }
 }
 

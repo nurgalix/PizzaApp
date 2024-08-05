@@ -13,44 +13,46 @@ final class ViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     
-    // Properties
+    // MARK: - Properties
     private var pizzaManager = PizzaManager()
-    private var listOfPizzas: [Pizza] = []
-    private var id: Int = 0
+    //    private var listOfPizzas: [Pizza] = []
+    private var listOfPizzas: [Pizza] = pizzaMain.results
+    private var pizzaDetail: PizzaDetail?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
         tableView.dataSource = self
         tableView.delegate = self
         
         pizzaManager.delegate = self
-        pizzaManager.performRequest()
+        //        pizzaManager.performRequest()
         
         navigationItem.title = "Pizza shop"
     }
     
-    func navigateBack() {
-        if let presentingViewController = presentingViewController as? DetailedViewController {
-            presentingViewController.isTabBarHidden = false
-            presentingViewController.tabBarController?.tabBar.isHidden = false
-        }
-        dismiss(animated: true, completion: nil)
-    }
 }
 
-extension ViewController: UITableViewDataSource {
+extension ViewController: UITableViewDataSource, MyCellDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listOfPizzas.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MyTableViewCell
-        
+        cell.delegate = self
         let pizza = listOfPizzas[indexPath.row]
         cell.setup(with: pizza)
         
+        
         return cell
+    }
+    
+    func btnTapped(cell: MyTableViewCell) {
+        let indexPath = self.tableView.indexPath(for: cell)
+        print("\(indexPath!.row) asd")
     }
 }
 
@@ -59,23 +61,24 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
-        id = self.listOfPizzas[indexPath.row].id
+        pizzaDetail = pizzasDetail[indexPath.row]
+//        print("didSelectRowAt: selected pizzaDetail with title: \(pizzaDetail?.title ?? "nil")")
         performSegue(withIdentifier: "segue", sender: cell)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // get a reference to the second view controller
-        let detailedViewController = segue.destination as! DetailedViewController
-        
-        // set a variable in the second view controller with the data to pass
-        detailedViewController.id = id
+        if segue.identifier == "segue" {
+            let detailedViewController = segue.destination as! DetailedViewController
+            detailedViewController.pizzaDetail = pizzaDetail
+//            print("prepare: setting pizzaDetail with title: \(pizzaDetail?.title ?? "nil")")
+        }
     }
-
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-
+    
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100.0
     }
@@ -84,6 +87,7 @@ extension ViewController: UITableViewDelegate {
 extension ViewController: PizzaManagerDelegate {
     func didFetchPizzas(_ pizzas: [Pizza]) {
         self.listOfPizzas = pizzas
+        print(pizzas)
         tableView.reloadData()
     }
     

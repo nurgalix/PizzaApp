@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DCA5E8842C3FF628004DC3C1 /* pizzaMain.json in Resources */ = {isa = PBXBuildFile; fileRef = DCA5E8832C3FF628004DC3C1 /* pizzaMain.json */; };
+		DCA5E8862C3FF680004DC3C1 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5E8852C3FF680004DC3C1 /* Data.swift */; };
 		DCCFA5CC2A50742000773823 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFA5CB2A50742000773823 /* AppDelegate.swift */; };
 		DCCFA5CE2A50742000773823 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFA5CD2A50742000773823 /* SceneDelegate.swift */; };
 		DCCFA5D02A50742000773823 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFA5CF2A50742000773823 /* ViewController.swift */; };
@@ -15,8 +17,8 @@
 		DCCFA5D82A50742000773823 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCCFA5D62A50742000773823 /* LaunchScreen.storyboard */; };
 		DCCFA5E02A507DB800773823 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFA5DF2A507DB800773823 /* MyTableViewCell.swift */; };
 		DCCFA5E72A55405100773823 /* PizzaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFA5E62A55405100773823 /* PizzaManager.swift */; };
-		DCCFA5E92A5572B900773823 /* PizzaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFA5E82A5572B900773823 /* PizzaData.swift */; };
-		DCCFA5EB2A55732200773823 /* PizzaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFA5EA2A55732200773823 /* PizzaModel.swift */; };
+		DCCFA5E92A5572B900773823 /* PizzaMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFA5E82A5572B900773823 /* PizzaMain.swift */; };
+		DCCFA5EB2A55732200773823 /* PizzaDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFA5EA2A55732200773823 /* PizzaDetail.swift */; };
 		DCCFA5ED2A56D14B00773823 /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFA5EC2A56D14B00773823 /* DetailedViewController.swift */; };
 		DCCFA5EF2A59C08500773823 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFA5EE2A59C08500773823 /* FavoritesViewController.swift */; };
 		DCCFA5F12A59C4BC00773823 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFA5F02A59C4BC00773823 /* OrderViewController.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DCA5E8832C3FF628004DC3C1 /* pizzaMain.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pizzaMain.json; sourceTree = "<group>"; };
+		DCA5E8852C3FF680004DC3C1 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		DCCFA5C82A50742000773823 /* PizzaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCCFA5CB2A50742000773823 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCCFA5CD2A50742000773823 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,8 +39,8 @@
 		DCCFA5D92A50742000773823 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCCFA5DF2A507DB800773823 /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		DCCFA5E62A55405100773823 /* PizzaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaManager.swift; sourceTree = "<group>"; };
-		DCCFA5E82A5572B900773823 /* PizzaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaData.swift; sourceTree = "<group>"; };
-		DCCFA5EA2A55732200773823 /* PizzaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaModel.swift; sourceTree = "<group>"; };
+		DCCFA5E82A5572B900773823 /* PizzaMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaMain.swift; sourceTree = "<group>"; };
+		DCCFA5EA2A55732200773823 /* PizzaDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaDetail.swift; sourceTree = "<group>"; };
 		DCCFA5EC2A56D14B00773823 /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
 		DCCFA5EE2A59C08500773823 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		DCCFA5F02A59C4BC00773823 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 				DCCFA5D62A50742000773823 /* LaunchScreen.storyboard */,
 				DCCFA5D92A50742000773823 /* Info.plist */,
 				DCD0F1DF2A6C472000903EE3 /* CartManager.swift */,
+				DCA5E8832C3FF628004DC3C1 /* pizzaMain.json */,
+				DCA5E8852C3FF680004DC3C1 /* Data.swift */,
 			);
 			path = PizzaApp;
 			sourceTree = "<group>";
@@ -92,8 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				DCCFA5E62A55405100773823 /* PizzaManager.swift */,
-				DCCFA5E82A5572B900773823 /* PizzaData.swift */,
-				DCCFA5EA2A55732200773823 /* PizzaModel.swift */,
+				DCCFA5E82A5572B900773823 /* PizzaMain.swift */,
+				DCCFA5EA2A55732200773823 /* PizzaDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,6 +180,7 @@
 			mainGroup = DCCFA5BF2A50742000773823;
 			packageReferences = (
 				DCD0F1DC2A6C46FB00903EE3 /* XCRemoteSwiftPackageReference "Observable" */,
+				DC962BC12C50486400115B96 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = DCCFA5C92A50742000773823 /* Products */;
 			projectDirPath = "";
@@ -191,6 +198,7 @@
 			files = (
 				DCCFA5D82A50742000773823 /* LaunchScreen.storyboard in Resources */,
 				DCCFA5D52A50742000773823 /* Assets.xcassets in Resources */,
+				DCA5E8842C3FF628004DC3C1 /* pizzaMain.json in Resources */,
 				DCCFA5D32A50742000773823 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,9 +215,10 @@
 				DCCFA5EF2A59C08500773823 /* FavoritesViewController.swift in Sources */,
 				DCCFA5E72A55405100773823 /* PizzaManager.swift in Sources */,
 				DCCFA5ED2A56D14B00773823 /* DetailedViewController.swift in Sources */,
-				DCCFA5EB2A55732200773823 /* PizzaModel.swift in Sources */,
+				DCCFA5EB2A55732200773823 /* PizzaDetail.swift in Sources */,
 				DCD0F1D82A6704A600903EE3 /* OrderTableViewCell.swift in Sources */,
-				DCCFA5E92A5572B900773823 /* PizzaData.swift in Sources */,
+				DCCFA5E92A5572B900773823 /* PizzaMain.swift in Sources */,
+				DCA5E8862C3FF680004DC3C1 /* Data.swift in Sources */,
 				DCCFA5E02A507DB800773823 /* MyTableViewCell.swift in Sources */,
 				DCD0F1E02A6C472000903EE3 /* CartManager.swift in Sources */,
 				DCCFA5CC2A50742000773823 /* AppDelegate.swift in Sources */,
@@ -431,6 +440,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DC962BC12C50486400115B96 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
 		DCD0F1DC2A6C46FB00903EE3 /* XCRemoteSwiftPackageReference "Observable" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/roberthein/Observable";

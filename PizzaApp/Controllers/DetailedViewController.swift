@@ -13,91 +13,109 @@ class DetailedViewController: UIViewController {
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var summaryHeaderLabel: UILabel!
     @IBOutlet weak var cuisinesLabel: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var stackView: UIStackView!
     
-    var id: Int = 0
-    var isTabBarHidden = false
-    private var pizzaManager = PizzaManager()
+    
+    var pizzaDetail: PizzaDetail?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        self.tabBarController?.tabBar.isHidden = true
-        pizzaManager.delegateDetail = self
-        pizzaManager.performRequest(for: id)
+        tabBarController?.tabBar.isHidden = true
         
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(labelTapped(_:)))
-//        summaryLabel.addGestureRecognizer(tapGesture)
-//        summaryLabel.isUserInteractionEnabled = true
-    }
-    @IBAction func buttonPressed(_ sender: UIButton) {
-        if let selectedTitle = navigationItem.title {
-            CartManager.shared.addPizza(with: selectedTitle)
+        setupScrollView()
+        setupStackView()
+        setupButton()
+        
+        if let pizzaDetail = pizzaDetail {
+//            print(pizzaDetail.title)
+            navigationItem.title = pizzaDetail.title
+            
+            pizzaImage.image = UIImage(named: pizzaDetail.image)
+            pizzaImage.layer.cornerRadius = 15
+            summaryHeaderLabel.text = "Description"
+
+            summaryLabel.text = pizzaDetail.summary
+            summaryLabel.numberOfLines = 0
+            cuisinesLabel.text = "\(pizzaDetail.cuisines.joined()) \n"
+        } else {
+            print("No pizza detail provided.")
+            
         }
     }
     
-    func presentNewViewController() {
-        isTabBarHidden = true
-        let viewControllerB = ViewController()
-        present(viewControllerB, animated: true, completion: nil)
+    private func setupStackView() {
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        scrollView.addSubview(stackView)
+        
+        let contentLayoutGuide = scrollView.contentLayoutGuide
+        
+        NSLayoutConstraint.activate([
+            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -16),
+            stackView.leadingAnchor.constraint(equalTo: contentLayoutGuide.leadingAnchor, constant: 8),
+            stackView.trailingAnchor.constraint(equalTo: contentLayoutGuide.trailingAnchor, constant: -8),
+            stackView.topAnchor.constraint(equalTo: contentLayoutGuide.topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: contentLayoutGuide.bottomAnchor)
+        ])
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        tabBarController?.tabBar.isHidden = isTabBarHidden
+    private func setupScrollView() {
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(scrollView)
+        
+        NSLayoutConstraint.activate([
+          scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+          scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+          scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+          scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
+    
+    private func setupButton() {
+        let button = UIButton(type: .system)
+        button.setTitle("Submit", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+
+        scrollView.addSubview(button)
+
+        let contentLayoutGuide = scrollView.contentLayoutGuide
+        let frameLayoutGuide = scrollView.frameLayoutGuide
+
+        NSLayoutConstraint.activate([
+            button.leadingAnchor.constraint(equalTo: frameLayoutGuide.leadingAnchor, constant: 8),
+            button.trailingAnchor.constraint(equalTo: frameLayoutGuide.trailingAnchor, constant: -8),
+            button.bottomAnchor.constraint(equalTo: frameLayoutGuide.bottomAnchor, constant: -8)
+        ])
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
     }
     
     // MARK: - TO FIX
-//    @objc func labelTapped(_ sender: UITapGestureRecognizer) {
-//        let label = sender.view as! UILabel
-//        // Update frame or constraints if needed
-//        if label.numberOfLines == 3 {
-//            label.numberOfLines = 0
-//        } else {
-//            label.numberOfLines = 3
-//        }
-//
-//        // Update the layout to reflect the changed number of lines
-//        label.superview?.layoutIfNeeded()
-//    }
-
+    //    @objc func labelTapped(_ sender: UITapGestureRecognizer) {
+    //        let label = sender.view as! UILabel
+    //        // Update frame or constraints if needed
+    //        if label.numberOfLines == 3 {
+    //            label.numberOfLines = 0
+    //        } else {
+    //            label.numberOfLines = 3
+    //        }
+    //
+    //        // Update the layout to reflect the changed number of lines
+    //        label.superview?.layoutIfNeeded()
+    //    }
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
-
-extension DetailedViewController: DetailPizzaManagerDelegate {
-    func didFetchPizza(_ pizza: PizzaDetail) {
-        print("111111111111111111111" + pizza.summary + "ASDASOIDJASOIDJASDASKJDALS:DJASDAAASD")
-        summaryLabel.text = pizza.summary
-        summaryLabel.numberOfLines = 0
-        summaryHeaderLabel.text = "Summary"
-        summaryHeaderLabel.font = .boldSystemFont(ofSize: 20)
-        cuisinesLabel.text = pizza.cuisines[0]
-//        if pizza.veryPopular == true {
-//            popularityLabel.text = "Popular"
-//        } else {
-//            popularityLabel.text = "Shit"
-//        }
-        if let url = URL(string: pizza.image) {
-            URLSession.shared.dataTask(with: url) { (data, response, error) in
-                // Error handling...
-                guard data != nil else { return }
-                DispatchQueue.main.async {
-                    self.pizzaImage.image = UIImage(data: data!)
-                }
-            }.resume()
-        }
-        
-        // MARK: - To solve long loading of title while segueing between views (does dispatch help?
-        DispatchQueue.main.async {
-            self.navigationItem.title = pizza.title
-        }
-    }
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

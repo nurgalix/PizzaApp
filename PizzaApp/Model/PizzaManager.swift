@@ -54,7 +54,7 @@ struct PizzaManager {
     }
     
     func performRequest(for id: Int) {
-        var pizzaDetailUrl = "https://api.spoonacular.com/recipes/" + String(id) + "/information?apiKey=e0852875d0d445aeb76895d158a4f54e"
+        let pizzaDetailUrl = "https://api.spoonacular.com/recipes/" + String(id) + "/information?apiKey=e0852875d0d445aeb76895d158a4f54e"
         
         guard let url = URL(string: pizzaDetailUrl) else {
             // TODO: Make throwable

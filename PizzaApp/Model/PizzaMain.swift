@@ -1,5 +1,5 @@
 //
-//  PizzaData.swift
+//  PizzaMain.swift
 //  PizzaApp
 //
 //  Created by Nurgali on 05.07.2023.
@@ -18,4 +18,5 @@ struct Pizza: Decodable {
     let servings: Int
     let id: Int
     let title: String
+    let description: String
 }

@@ -5,6 +5,10 @@
 //  Created by Nurgali on 01.07.2023.
 //
 
+protocol MyCellDelegate: AnyObject {
+    func btnTapped(cell: MyTableViewCell)
+}
+
 import UIKit
 
 class MyTableViewCell: UITableViewCell {
@@ -13,8 +17,9 @@ class MyTableViewCell: UITableViewCell {
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var orderButton: UIButton!
     @IBOutlet private weak var pizzaImage: UIImageView!
+    @IBOutlet weak var emptyView: UIView!
     
-//    private var id: Int = 0
+    weak var delegate: MyCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,8 +27,8 @@ class MyTableViewCell: UITableViewCell {
         setupUI()
     }
     
-    @IBAction func didTapButton(_ sender: Any) {
-        
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        delegate?.btnTapped(cell: self)
     }
     
     override func layoutSubviews() {
@@ -38,11 +43,14 @@ class MyTableViewCell: UITableViewCell {
     
     func setup(with pizza: Pizza) {
         titleLabel.text = pizza.title
-        descriptionLabel.text = "No data"
-        orderButton.titleLabel?.text = "No price"
+        titleLabel.sizeToFit()
+        descriptionLabel.text = pizza.description
+        descriptionLabel.numberOfLines = 3
+        descriptionLabel.sizeToFit()
+        orderButton.setTitle("В корзину", for: .normal)
+        
         pizzaImage.image = UIImage.checkmark
         let imageUrl = "https://spoonacular.com/recipeImages/" + pizza.image
-//        let data = try? Data(contentsOf: url!)
         if let url = URL(string: imageUrl) {
             URLSession.shared.dataTask(with: url) { (data, response, error) in
                 // Error handling...
