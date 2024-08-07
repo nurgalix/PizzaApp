@@ -12,11 +12,8 @@ class OrderViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var list: [String] = [] {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    
+    private var listOfPizzas = GlobalArray.shared.getArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,18 +21,26 @@ class OrderViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        
+//        listOfPizzas = GlobalArray.shared.getArray()
     }
 }
 
 extension OrderViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        return listOfPizzas.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell", for: indexPath) as! OrderTableViewCell
-        cell.title.text = list[indexPath.row]
+        cell.title.text = listOfPizzas[indexPath.row].title
         return cell
+    }
+}
+
+extension OrderViewController {
+    override func viewWillAppear(_ animated: Bool) {
+        listOfPizzas = GlobalArray.shared.getArray()
+        tableView.reloadData()
+        print("again")
     }
 }

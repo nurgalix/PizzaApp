@@ -27,14 +27,16 @@ class DetailedViewController: UIViewController {
         setupStackView()
         setupButton()
         
+        print("THIS IS ARRAY \(GlobalArray.shared.getArray())")
+        
         if let pizzaDetail = pizzaDetail {
-//            print(pizzaDetail.title)
+            //            print(pizzaDetail.title)
             navigationItem.title = pizzaDetail.title
             
             pizzaImage.image = UIImage(named: pizzaDetail.image)
             pizzaImage.layer.cornerRadius = 15
             summaryHeaderLabel.text = "Description"
-
+            
             summaryLabel.text = pizzaDetail.summary
             summaryLabel.numberOfLines = 0
             cuisinesLabel.text = "\(pizzaDetail.cuisines.joined()) \n"
@@ -65,27 +67,31 @@ class DetailedViewController: UIViewController {
         view.addSubview(scrollView)
         
         NSLayoutConstraint.activate([
-          scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-          scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-          scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-          scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
     private func setupButton() {
         let button = UIButton(type: .system)
-        button.setTitle("Submit", for: .normal)
+        button.setTitle("Order", for: .normal)
+        button.tintColor = .white
+        button.backgroundColor = .systemGray
         button.translatesAutoresizingMaskIntoConstraints = false
-
+        
+        
+        
         scrollView.addSubview(button)
-
+        
         let contentLayoutGuide = scrollView.contentLayoutGuide
         let frameLayoutGuide = scrollView.frameLayoutGuide
-
+        
         NSLayoutConstraint.activate([
-            button.leadingAnchor.constraint(equalTo: frameLayoutGuide.leadingAnchor, constant: 8),
-            button.trailingAnchor.constraint(equalTo: frameLayoutGuide.trailingAnchor, constant: -8),
-            button.bottomAnchor.constraint(equalTo: frameLayoutGuide.bottomAnchor, constant: -8)
+            button.centerXAnchor.constraint(equalTo: frameLayoutGuide.centerXAnchor),
+            button.widthAnchor.constraint(greaterThanOrEqualToConstant: button.intrinsicContentSize.width + 16),
+            button.bottomAnchor.constraint(lessThanOrEqualTo: frameLayoutGuide.bottomAnchor, constant: -8)
         ])
     }
     

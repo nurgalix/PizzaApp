@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class ViewController: UIViewController, UITabBarControllerDelegate {
     
     // MARK: - IBOutlets
     
@@ -23,6 +23,8 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tabBarController?.delegate = self
+        
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -30,6 +32,7 @@ final class ViewController: UIViewController {
         //        pizzaManager.performRequest()
         
         navigationItem.title = "Pizza shop"
+        print(GlobalArray.shared.getArray())
     }
     
 }
@@ -46,13 +49,12 @@ extension ViewController: UITableViewDataSource, MyCellDelegate {
         let pizza = listOfPizzas[indexPath.row]
         cell.setup(with: pizza)
         
-        
         return cell
     }
     
     func btnTapped(cell: MyTableViewCell) {
         let indexPath = self.tableView.indexPath(for: cell)
-        print("\(indexPath!.row) asd")
+        GlobalArray.shared.addArray(data: pizzasDetail[indexPath!.row])
     }
 }
 

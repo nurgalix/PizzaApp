@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC962BC82C624D1900115B96 /* GlobalArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC962BC72C624D1900115B96 /* GlobalArray.swift */; };
 		DCA5E8842C3FF628004DC3C1 /* pizzaMain.json in Resources */ = {isa = PBXBuildFile; fileRef = DCA5E8832C3FF628004DC3C1 /* pizzaMain.json */; };
 		DCA5E8862C3FF680004DC3C1 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5E8852C3FF680004DC3C1 /* Data.swift */; };
 		DCCFA5CC2A50742000773823 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCFA5CB2A50742000773823 /* AppDelegate.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC962BC72C624D1900115B96 /* GlobalArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalArray.swift; sourceTree = "<group>"; };
 		DCA5E8832C3FF628004DC3C1 /* pizzaMain.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pizzaMain.json; sourceTree = "<group>"; };
 		DCA5E8852C3FF680004DC3C1 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		DCCFA5C82A50742000773823 /* PizzaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +61,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC962BC62C624CE800115B96 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DCD0F1DF2A6C472000903EE3 /* CartManager.swift */,
+				DCA5E8832C3FF628004DC3C1 /* pizzaMain.json */,
+				DCA5E8852C3FF680004DC3C1 /* Data.swift */,
+				DC962BC72C624D1900115B96 /* GlobalArray.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		DCCFA5BF2A50742000773823 = {
 			isa = PBXGroup;
 			children = (
@@ -81,15 +94,13 @@
 				DCD0F1DA2A6C45C200903EE3 /* Controllers */,
 				DCD0F1D92A6C45AB00903EE3 /* Views */,
 				DCCFA5E12A519A1500773823 /* Model */,
-				DCCFA5CB2A50742000773823 /* AppDelegate.swift */,
+				DC962BC62C624CE800115B96 /* Data */,
 				DCCFA5CD2A50742000773823 /* SceneDelegate.swift */,
+				DCCFA5CB2A50742000773823 /* AppDelegate.swift */,
 				DCCFA5D12A50742000773823 /* Main.storyboard */,
 				DCCFA5D42A50742000773823 /* Assets.xcassets */,
 				DCCFA5D62A50742000773823 /* LaunchScreen.storyboard */,
 				DCCFA5D92A50742000773823 /* Info.plist */,
-				DCD0F1DF2A6C472000903EE3 /* CartManager.swift */,
-				DCA5E8832C3FF628004DC3C1 /* pizzaMain.json */,
-				DCA5E8852C3FF680004DC3C1 /* Data.swift */,
 			);
 			path = PizzaApp;
 			sourceTree = "<group>";
@@ -216,6 +227,7 @@
 				DCCFA5E72A55405100773823 /* PizzaManager.swift in Sources */,
 				DCCFA5ED2A56D14B00773823 /* DetailedViewController.swift in Sources */,
 				DCCFA5EB2A55732200773823 /* PizzaDetail.swift in Sources */,
+				DC962BC82C624D1900115B96 /* GlobalArray.swift in Sources */,
 				DCD0F1D82A6704A600903EE3 /* OrderTableViewCell.swift in Sources */,
 				DCCFA5E92A5572B900773823 /* PizzaMain.swift in Sources */,
 				DCA5E8862C3FF680004DC3C1 /* Data.swift in Sources */,
