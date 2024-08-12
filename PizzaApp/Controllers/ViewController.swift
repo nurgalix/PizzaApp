@@ -32,7 +32,6 @@ final class ViewController: UIViewController, UITabBarControllerDelegate {
         //        pizzaManager.performRequest()
         
         navigationItem.title = "Pizza shop"
-        print(GlobalArray.shared.getArray())
     }
     
 }
@@ -55,6 +54,9 @@ extension ViewController: UITableViewDataSource, MyCellDelegate {
     func btnTapped(cell: MyTableViewCell) {
         let indexPath = self.tableView.indexPath(for: cell)
         GlobalArray.shared.addArray(data: pizzasDetail[indexPath!.row])
+//        GlobalArray.shared.changeCount(index: GlobalArray.shared.getArray().index)
+        
+        
     }
 }
 
@@ -64,7 +66,6 @@ extension ViewController: UITableViewDelegate {
         let cell = tableView.cellForRow(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
         pizzaDetail = pizzasDetail[indexPath.row]
-//        print("didSelectRowAt: selected pizzaDetail with title: \(pizzaDetail?.title ?? "nil")")
         performSegue(withIdentifier: "segue", sender: cell)
     }
     
@@ -72,7 +73,6 @@ extension ViewController: UITableViewDelegate {
         if segue.identifier == "segue" {
             let detailedViewController = segue.destination as! DetailedViewController
             detailedViewController.pizzaDetail = pizzaDetail
-//            print("prepare: setting pizzaDetail with title: \(pizzaDetail?.title ?? "nil")")
         }
     }
     

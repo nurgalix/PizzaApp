@@ -27,16 +27,12 @@ class DetailedViewController: UIViewController {
         setupStackView()
         setupButton()
         
-        print("THIS IS ARRAY \(GlobalArray.shared.getArray())")
         
         if let pizzaDetail = pizzaDetail {
-            //            print(pizzaDetail.title)
             navigationItem.title = pizzaDetail.title
-            
             pizzaImage.image = UIImage(named: pizzaDetail.image)
             pizzaImage.layer.cornerRadius = 15
             summaryHeaderLabel.text = "Description"
-            
             summaryLabel.text = pizzaDetail.summary
             summaryLabel.numberOfLines = 0
             cuisinesLabel.text = "\(pizzaDetail.cuisines.joined()) \n"
@@ -79,9 +75,8 @@ class DetailedViewController: UIViewController {
         button.setTitle("Order", for: .normal)
         button.tintColor = .white
         button.backgroundColor = .systemGray
+        button.addTarget(self, action: #selector(pressed), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
-        
-        
         
         scrollView.addSubview(button)
         
@@ -95,33 +90,15 @@ class DetailedViewController: UIViewController {
         ])
     }
     
+    @objc func pressed() {
+        //MARK: - FORCE UNWRAPPING REMOVE then
+        GlobalArray.shared.addArray(data: pizzaDetail!)
+        tabBarController?.selectedIndex = 2
+    }
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
     }
-    
-    // MARK: - TO FIX
-    //    @objc func labelTapped(_ sender: UITapGestureRecognizer) {
-    //        let label = sender.view as! UILabel
-    //        // Update frame or constraints if needed
-    //        if label.numberOfLines == 3 {
-    //            label.numberOfLines = 0
-    //        } else {
-    //            label.numberOfLines = 3
-    //        }
-    //
-    //        // Update the layout to reflect the changed number of lines
-    //        label.superview?.layoutIfNeeded()
-    //    }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

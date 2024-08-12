@@ -14,5 +14,6 @@ struct PizzaDetail: Decodable {
     let title: String
     let image: String
     let summary: String
+    var count: Int
     let cuisines: [String]
 }

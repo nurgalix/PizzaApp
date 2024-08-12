@@ -19,4 +19,8 @@ class GlobalArray {
     func addArray(data: PizzaDetail) {
         globalArray.append(data)
     }
+    
+    func changeCount(index: Int) {
+        globalArray[index].count += 1 
+    }
 }
